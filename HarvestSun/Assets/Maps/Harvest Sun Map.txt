@@ -1,0 +1,14 @@
+HARVEST SUN MAP DOCUMENTATON
+
+I need to write a converter for the old format to a new binary format.
+
+1) What does the file extension mean?
+	hsm stands for Harvest Sun Map
+
+2) Line definitions
+	0x01 definition
+	0x02 root folder designation
+	
+3) definition types
+	0x01 tile
+
