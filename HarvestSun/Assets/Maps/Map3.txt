@@ -1,0 +1,48 @@
+13,13
+[defines]
+//Set the root folder for the floors
+set root folder Tiles\Inside\Floors\
+define tile tilefloor.png 0 0 0
+define tile tilefloor2.png 1 0 0
+define tile wood_tile.png 2 0 0
+//Set the root folder for the walls
+set root folder Tiles\Inside\Walls\
+define tile wall_bottom_01.png w 1 1
+define tile wall_bottom_02.png e 1 1
+define tile wall_top_01.png s 1 1
+define tile wall_top_02.png d 1 1
+define tile wall_turn_left.png v 1 1
+define tile wall_turn_left_r.png c 1 1
+define tile wall_turn_right.png z 1 1
+define tile wall_turn_right_r.png x 1 1
+define tile wall_side.png g 1 1
+//define our dialogue box.
+define dialoguebox 1 5 5
+define dialogue 1 (This is a test string. Test 1, test 2, test 3, test 4, test 5, test 6.)
+define dialogue 1 (I hope you honestly enjoy your stay.)
+//define triggers.
+//Triger types:
+// entersquare(x, y) - Player enters the square specified.
+// exitsquare(x, y) - Player exits the specified square.
+// useonsquare(x, y) - Player presses the use key on the square.
+//Effects:
+// showdialogue(ID) - Show the specified dialogue ID.
+// moveplayer(x, y) - Move the player to x, y
+// changetile(x, y, newtile) - Change the tile to another texture.
+// changeplayertex(newtex) - Change the player texture - Currently unimplemented.
+define trigger entersquare(3, 2) moveplayer(4, 1)
+[end]
+zsssssssssssv
+gwwwwwwwwwwwg
+g11111111111g
+g11111111111g
+g11111111111g
+g11111111111g
+g11111111111g
+g11111111111g
+g11111111111g
+g11111111111g
+g11111111111g
+g11111111111g
+xsssssssssssc
+start at 1,3
