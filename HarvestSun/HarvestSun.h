@@ -8,6 +8,7 @@
 #include "StateManager.h"
 #include "Menu.h"
 #include "AnimatedSprite.h"
+#include "ControlledEntity.h"
 
 class HarvestSun
 {

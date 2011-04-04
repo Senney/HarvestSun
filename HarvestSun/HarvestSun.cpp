@@ -26,6 +26,18 @@ HarvestSun::~HarvestSun()
 
 void HarvestSun::Run()
 {
+	sf::Clock GameClock;
+
+	sf::Image* characterSpriteSheet = new sf::Image();
+	characterSpriteSheet->LoadFromFile("Assets\\Images\\PlayerTile.png");
+	AnimatedSprite test1(characterSpriteSheet, 3, 0, 0, 16, 16, 80, GameClock.GetElapsedTime());
+	AnimatedSprite test2(characterSpriteSheet, 3, 0, 16, 16, 16, 80, GameClock.GetElapsedTime());
+
+	ControlledEntity PlayerEntity;
+	PlayerEntity.AddSprite("walkRight", test1);
+
+	float lastTime = GameClock.GetElapsedTime();
+
 	while (gameWindow->IsOpened())
 	{
 		const sf::Input &windowInput = gameWindow->GetInput();
@@ -37,7 +49,7 @@ void HarvestSun::Run()
 				gameWindow->Close();
 		}
 
-		gameWindow->Clear();
+		gameWindow->Clear(sf::Color(255, 255, 255, 255));
 		int state = StateManager::Singleton()->GetCurrentState();
 		switch (state)
 		{
@@ -46,6 +58,9 @@ void HarvestSun::Run()
 			mainMenu.Draw(gameWindow);
 			break;
 		case STATE_RUNNING:
+			PlayerEntity.HandleInput(windowInput);
+			PlayerEntity.Update(GameClock.GetElapsedTime());
+			gameWindow->Draw(PlayerEntity);
 			break;
 		case STATE_OPTIONS:
 			break;

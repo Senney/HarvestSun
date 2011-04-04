@@ -1,3 +1,6 @@
+#ifndef ANIMATED_SPRITE_H
+#define ANIMATED_SPRITE_H
+
 #include <sfml/Graphics.hpp>
 #include <sfml/Window.hpp>
 
@@ -33,8 +36,8 @@ public:
 	void SetSpriteSheet(sf::Image* spriteSheet);
 	sf::Image* GetSpriteSheet();
 
-	void SetPosition(float x, float y);
-	sf::Vector2f GetPosition();
+	//void SetPosition(float x, float y);
+	//sf::Vector2f GetPosition();
 
 	void Draw(sf::RenderWindow* gameWindow);
 
@@ -59,3 +62,5 @@ private:
 	sf::Image* m_SpriteSheet;
 	sf::Image* spriteParts;
 };
+
+#endif 
